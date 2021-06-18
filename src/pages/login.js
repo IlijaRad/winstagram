@@ -7,8 +7,8 @@ export default function Login(){
     const history = useHistory();
     const {firebase} = useContext(FirebaseContext);
 
-    const [emailAddress, setEmailAddress] = useState('');
-    const [password, setPassword] = useState('');
+    const [emailAddress, setEmailAddress] = useState('test123@gmail.com');
+    const [password, setPassword] = useState('test123');
 
     const [error, setError] = useState('');
     const isInvalid = password === '' || emailAddress === '';
@@ -44,11 +44,11 @@ export default function Login(){
                 <form onSubmit={handleLogin} method="POST">
            
                     <input aria-label="Enter your email address" type="text" placeholder="Email address" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary round mb-2"
-                    onChange={({target}) => setEmailAddress(target.value)} />
+                    onChange={({target}) => setEmailAddress(target.value)} value={emailAddress}/>
 
 
                     <input aria-label="Enter your password" type="password" placeholder="Password" className="text-sm text-gray base w-full mr-3 py-5 px-4 h-2 border border-gray-primary round mb-2"
-                    onChange={({target}) => setPassword(target.value)} />
+                    onChange={({target}) => setPassword(target.value)} value={password}/>
                     <button disabled={isInvalid} type="submit" className={`bg-blue-medium text-white w-full rounded h-8 font-bold ${isInvalid && 'opacity-50'}`}>
                         Log In
                     </button>
