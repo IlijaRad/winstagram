@@ -7,8 +7,8 @@ export default function Login(){
     const history = useHistory();
     const {firebase} = useContext(FirebaseContext);
 
-    const [emailAddress, setEmailAddress] = useState('test123@gmail.com');
-    const [password, setPassword] = useState('test123');
+    const [emailAddress, setEmailAddress] = useState('');
+    const [password, setPassword] = useState('');
 
     const [error, setError] = useState('');
     const isInvalid = password === '' || emailAddress === '';
