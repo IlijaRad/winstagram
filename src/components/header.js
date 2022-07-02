@@ -9,16 +9,16 @@ export default function Header() {
   const { user } = useContext(UserContext);
 
   return (
-    <header className="h-16 border-b border-gray-primary bg-white px-8">
+    <header className="h-16 border-b border-gray-primary bg-white px-6">
       <div className="container mx-auto h-full max-w-screen-lg">
         <div className="flex h-full justify-between">
           <div className="align-items flex cursor-pointer items-center text-center text-gray-700">
-            <h1 className="flex w-full justify-center">
+            <h1 className="mr-4 flex w-full justify-center">
               <Link to={ROUTES.DASHBOARD} aria-label="Instagram logo">
                 <img
                   src="/images/logo.png"
                   alt="Instagram"
-                  className="mt-2 w-6/12"
+                  className="mt-2 w-[103px]"
                 />
               </Link>
             </h1>
@@ -67,7 +67,7 @@ export default function Header() {
                     />
                   </svg>
                 </button>
-                <div className="flex cursor-pointer items-center">
+                <div className="flex shrink-0 cursor-pointer items-center">
                   <Link to={`/p/${user.displayName.toLowerCase()}`}>
                     <img
                       className="flex h-8 w-8 rounded-full"
