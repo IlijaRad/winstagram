@@ -20,11 +20,14 @@ export default function Comments({
           </p>
         )}
         {comments.slice(0, 3).map((item) => (
-          <p key={`${item.comment}-${item.displayName}`} className="mb-1">
+          <p
+            key={`${item.comment}-${item.displayName}`}
+            className="mb-1 flex flex-wrap"
+          >
             <Link to={`/p/${item.displayName}`}>
               <span className="mr-1 font-bold">{item.displayName}</span>
             </Link>
-            <span>{item.comment}</span>
+            <span className="block max-w-full line-clamp-8 break-words text-ellipsis">{item.comment}</span>
           </p>
         ))}
         <p className="text-xs uppercase text-gray-base">

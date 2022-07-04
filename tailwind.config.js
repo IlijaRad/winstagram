@@ -7,9 +7,6 @@ module.exports = {
     extend: {
       colors: {
         white: "#ffffff",
-        blue: {
-          medium: "#005c98",
-        },
         black: {
           light: "#262626",
           faded: "#00000059",
@@ -33,4 +30,5 @@ module.exports = {
       display: ["group-hover"],
     },
   },
+  plugins: [require("@tailwindcss/line-clamp")],
 };
