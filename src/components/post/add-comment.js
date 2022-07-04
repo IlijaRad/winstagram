@@ -47,6 +47,7 @@ export default function AddComment({
           value={comment}
           onChange={({ target }) => setComment(target.value)}
           ref={commentInput}
+          maxLength={255}
         />
         <button
           className={`h-fit text-sm font-bold text-lightBlue-primary ${

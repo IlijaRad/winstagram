@@ -54,8 +54,8 @@ export default function Header({
 
   return (
     <>
-      <div className="mx-4 mb-8 flex max-w-screen-lg px-5 pt-[30px] md:mx-0 md:mb-12">
-        <div className="mr-[30px] flex shrink items-center md:basis-[30%] md:justify-center">
+      <div className="mb-8 flex max-w-full px-5 pt-[30px] sm:mx-4 md:mx-0 md:mb-12 md:max-w-screen-lg">
+        <div className="mr-4 flex shrink items-center md:mr-[30px] md:basis-[30%] md:justify-center">
           {profileUsername ? (
             <img
               className="flex h-[77px] min-h-[77px] w-[77px] min-w-[77px] rounded-full md:h-40 md:w-40"
@@ -69,15 +69,17 @@ export default function Header({
             <Skeleton circle height={150} width={150} count={1} />
           )}
         </div>
-        <div className="flex basis-[70%] flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center md:basis-[70%]">
           <div className="container flex items-center">
-            <p className="mr-4 -mt-1 text-2xl">{profileUsername}</p>
+            <p className="mr-2 -mt-1 max-w-[150px] truncate text-xl sm:mr-4 sm:max-w-[300px] md:max-w-[350px] md:text-2xl">
+              {profileUsername}
+            </p>
             {activeBtnFollow && isFollowingProfile === null ? (
               <Skeleton count={1} width={80} height={32} />
             ) : (
               activeBtnFollow && (
                 <button
-                  className="w-20 rounded bg-lightBlue-primary text-sm font-bold leading-8 text-white"
+                  className="w-[92px] rounded bg-lightBlue-primary py-0.5 text-sm font-bold leading-8 text-white"
                   type="button"
                   onClick={handleToggleFollow}
                   onKeyDown={(event) => {
@@ -119,7 +121,7 @@ export default function Header({
         </div>
       </div>
       <div className="flex flex-col md:hidden">
-        <p className="px-9 font-medium">
+        <p className="truncate px-9 font-medium">
           {!fullName ? <Skeleton count={1} height={24} /> : fullName}
         </p>
         <div className="mt-8 flex w-full items-center justify-around border-t border-gray-primary py-2 text-sm text-[#262626]">
