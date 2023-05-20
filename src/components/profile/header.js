@@ -8,7 +8,7 @@ import { DEFAULT_IMAGE_PATH } from "../../constants/paths";
 
 export default function Header({
   photosCount,
-  followerCount,
+  followerCount = 0,
   setFollowerCount,
   profile: {
     docId: profileDocId,
@@ -71,7 +71,7 @@ export default function Header({
         </div>
         <div className="flex flex-col items-center justify-center md:basis-[70%]">
           <div className="container flex items-center">
-            <p className="mr-2 -mt-1 max-w-[150px] truncate text-xl sm:mr-4 sm:max-w-[300px] md:max-w-[350px] md:text-2xl">
+            <p className="-mt-1 mr-2 max-w-[150px] truncate text-xl sm:mr-4 sm:max-w-[300px] md:max-w-[350px] md:text-2xl">
               {profileUsername}
             </p>
             {activeBtnFollow && isFollowingProfile === null ? (
@@ -145,7 +145,7 @@ export default function Header({
 
 Header.propTypes = {
   photosCount: PropTypes.number.isRequired,
-  followerCount: PropTypes.number.isRequired,
+  followerCount: PropTypes.number,
   setFollowerCount: PropTypes.func.isRequired,
   profile: PropTypes.shape({
     docId: PropTypes.string,
